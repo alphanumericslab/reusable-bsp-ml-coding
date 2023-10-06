@@ -7,8 +7,8 @@
 - Tall vs fat conventions in multichannel data representation.
 - Sample indexing: Running across vector borders
 
-### Hardcoded parametersShould be avoided.
-Any ad hoc parameter should be passed asinput arguments to functions. Hardcoded parameters should be avoided as much aspossible, unless when they have been found through optimization or have been setby design. Hardcoded parameters suffer from lack of generalizability.
+### Hardcoded parameters
+Should be avoided. Any ad hoc parameter should be passed asinput arguments to functions. Hardcoded parameters should be avoided as much aspossible, unless when they have been found through optimization or have been setby design. Hardcoded parameters suffer from lack of generalizability.
 
 ### Data paths and file listings
 Data paths should be only passed as input arguments and should not be hardcoded Well-designed codes should be cognizant of path separators across different OS, such as the `/` symbol in Linux/MacOS vs `\` in Windows machines.
