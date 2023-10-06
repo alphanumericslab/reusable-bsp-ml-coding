@@ -13,7 +13,7 @@ Should be avoided. Any ad hoc parameter should be passed asinput arguments to fu
 ### Data paths and file listings
 Data paths should be only passed as input arguments and should not be hardcoded Well-designed codes should be cognizant of path separators across different OS, such as the `/` symbol in Linux/MacOS vs `\` in Windows machines.
 
-### Empry lists
+### Empty lists
 Codes should not presume that all functions will return with success. Examples of function failures include:
 
 1. Unresolved paths
@@ -32,7 +32,8 @@ Discrete filter designs, wavelet scale levels, averaging window sizes, number of
 Ifa code has been optimized for a specific sampling frequency, resampling any given signal to that specific sampling frequency can be used as a workaround for applying the optimized codes on arbitrary datasets. 
 
 ### Powerline frequency
-Countries across the globe use either 50Hz or 60Hz as their powerline (also known as the *mains*) frequency. The knowledge of the powerline frequency is essential for the efficient rejection of powerline interferences from biosignals.The mains frequency should be stored in the metadata and used parametrically for designing notch filters, whenever required.
+Countries across the globe use either 50Hz or 60Hz as their powerline (also known as the *mains*) frequency, as shown below. The knowledge of the powerline frequency is essential for the efficient rejection of powerline interferences from biosignals.The mains frequency should be stored in the metadata and used parametrically for designing notch filters, whenever required.
+![Powerline frequenct map](./images/powerline-frequency-map.png)
 
 ### Physical units
 All physiological data have physical units. Biosignal processing and machine learning algorithms should be designed to work seamlessly,regardless of the signal units through proper scaling. For example, changing the amplitude units on an ECG signal from millivolts to microvolts or volts should not impact the performance of the algorithms. Similarly changing time units from seconds to milliseconds should not impact time-based measurement. Another example is measurements made in SI unit (metric system) vs the US Customary unit, which only change our unit of measurements, but should not impact our inference of the physiological phenomenon. Note that algorithms may still rely on absolute amplitudes or time-scales of data in their properphysical units or may even be designed for a specific unit of measurements. The units used to design an algorithm should be well-documented in the codebase, enabling the users to apply appropriate unit conversions whenever required.
